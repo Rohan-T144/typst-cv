@@ -2,9 +2,9 @@
 
 #let header = [
 
-  #name([Jane], [Doedenaj])
+  #name([Jane], [Doe])
 
-  #description("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod")
+  // #description("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod")
 
   #contactDetails(
     phone:    "+123 456 789",
@@ -125,7 +125,7 @@
 
 #layout(
   header:  header,
-  photo:   "images/photo.png",
+  // photo:   "images/photo.png",
   body:    body,
-  sidebar: sidebar
+  // sidebar: sidebar
 )

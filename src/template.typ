@@ -32,7 +32,7 @@
  ********************/
 
 #let name(first, last) = [
-  #firstNameStyle(first)
+  #lastNameStyle(first)
   #lastNameStyle(last)
   #v(nameSpace, weak: true)
 ]
@@ -60,26 +60,31 @@
 
   for (key, value) in namedArgs {
     if (key == "email") {
-      detailsStyle([󰇮 #h(5pt) #link("mailto:" + value)[#value]])
+      // detailsStyle([󰇮 #h(5pt) #link("mailto:" + value)[#value]])
+      detailsStyle([#link("mailto:" + value)[#value]])
     } else if (key == "github") {
-      detailsStyle([󰊤 #h(5pt) #link("https://github.com/" + value)[#value]])
+      detailsStyle([Github: #link("https://github.com/" + value)[#underline[#value]]])
+      // detailsStyle([󰊤 #h(5pt) #link("https://github.com/" + value)[#value]])
     } else if (key == "gitlab") {
-      detailsStyle([󰮠 #h(5pt) #link("https://gitlab.com/" + value)[#value]])
+      detailsStyle([󰮠 #h(5pt) #link("https://gitlab.com/" + value)[#underline[#value]]])
     } else if (key == "homepage") {
       detailsStyle([󰖟 #h(5pt) #link("https://" + value)[#value]])
     } else if (key == "linkedin") {
-      detailsStyle([#link("https://www.linkedin.com/in/" + value)[#value]])
+      detailsStyle([LinkedIn: #link("https://www.linkedin.com/in/" + value.at(1))[#underline[#value.at(0)]]])
     } else if (key == "location") {
-      detailsStyle([󰍎 #h(5pt) #value])
+      // detailsStyle([󰍎 #h(5pt) #value])
+      detailsStyle([#value])
     } else if (key == "phone") {
-      detailsStyle([󰏲 #h(5pt) #value])
+      // detailsStyle([󰏲 #h(5pt) #value])
+      detailsStyle([#h(5pt) #value])
     } else {
       detailsStyle(value)
     }
     // Add some separating space, unless this was the last item
     counter = counter + 1
     if (counter != numArgs) {
-      h(12pt)
+      // h(12pt)
+      [#h(5pt)|#h(5pt)]
     }
   }
   for value in unnamedArgs {
@@ -172,11 +177,12 @@
   set par(leading: interLine)
 
   // We remove any automatic spacing to provide our own:
-  set par(spacing: 0pt)
+  // set par(spacing: 0pt)
 
   // Layout setup
   set align(left)
   set page(
+      // paper: "us-letter",
       paper: "a4",
       margin: (
           left:   pageMargin,
@@ -203,7 +209,7 @@
       sidebar
     )
   } else {
-    arguments.at("body", "")
+    arguments.at("body")
   }
 
   let headerSection

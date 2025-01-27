@@ -3,29 +3,33 @@
  **************************/
 
 // Space around the whole CV
-#let pageMargin = 1.2cm
+#let pageMargin = 1.15cm
 // Space under name
-#let nameSpace = 1.4em
+#let nameSpace = 1.0em
 // Space under description
-#let descriptionSpace = 1.3em
+#let descriptionSpace = 0em
 // Space under personal details
 #let detailSpace = 0em
 // Minimum space between the photo and the rest of the header
 #let photoSpace = 1em
 // Height of the space between the header and the rest of the content
-#let headerSpace = 20pt
+#let headerSpace = 1em
+// #let headerSpace = 20pt
 // Width of the space between the main section and the sidebar
 #let sidebarSpace = 20pt
 // Size of the sidebar relative to the whole width
-#let sidebarSize = 35%
+#let sidebarSize = 30%
 // Space between consecutive entries, or between a section title
 // and an entry, or between an entry and a section title
-#let interEntry = 1.6em
+#let interEntry = 0.9em
+// #let interEntry = 1.6em
 // Space between consecutive items (entry title, organisation, etc.)
 // inside one entry
-#let interItem = 0.9em
+#let interItem = 0.65em
+// #let interItem = 0.9em
 // Space between lines of a same paragraph
-#let interLine = 0.7em
+#let interLine = 0.55em
+// #let interLine = 0.7em
 // Image size
 #let imageSize = 2.8cm
 
@@ -37,13 +41,19 @@
 // Global values common to several styles
 
 // The Nerd font is only needed for icons (phone, mail, etc.)
-#let globalFont = ("Source Sans Pro", "Symbols Nerd Font")
-#let globalFontSize = 12pt
+#let globalFont = ("Libertinus Serif", "Symbols Nerd Font")
+// #let globalFont = ("Source Sans Pro")
+#let globalFontSize = 10pt
 
-#let accentColor = rgb("#800020")
+#let accentColor = black
+// #let lightGray   = black
+// #let mediumGray  = black
+// #let darkGray    = black
+// #let accentColor = rgb("#800020")
 #let lightGray   = rgb("#ededef")
 #let mediumGray  = rgb("#78787e")
 #let darkGray    = rgb("#3c3c42")
+
 
 // Styles of individual elements
 
@@ -67,7 +77,7 @@
   font:   globalFont,
   fill:   accentColor,
   weight: "medium",
-  size:   13pt,
+  size:   10pt,
   style:  "oblique",
   content
 )
@@ -84,7 +94,7 @@
   font:   globalFont,
   fill:   accentColor,
   weight: "bold",
-  size:   16pt,
+  size:   13pt,
   content
 )
 
